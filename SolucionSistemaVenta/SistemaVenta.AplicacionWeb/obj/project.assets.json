@@ -10490,19 +10490,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jagarayleon\\.nuget\\packages\\": {}
+    "C:\\Users\\antho\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\SistemaVenta.AplicacionWeb.csproj",
+      "projectUniqueName": "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\SistemaVenta.AplicacionWeb.csproj",
       "projectName": "SistemaVenta.AplicacionWeb",
-      "projectPath": "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\SistemaVenta.AplicacionWeb.csproj",
-      "packagesPath": "C:\\Users\\jagarayleon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\obj\\",
+      "projectPath": "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\SistemaVenta.AplicacionWeb.csproj",
+      "packagesPath": "C:\\Users\\antho\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jagarayleon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\antho\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10510,20 +10510,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj": {
-              "projectPath": "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj"
+            "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj": {
+              "projectPath": "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj"
             },
-            "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj": {
-              "projectPath": "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj"
+            "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj": {
+              "projectPath": "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj"
             },
-            "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.IOC\\SistemaVenta.IOC.csproj": {
-              "projectPath": "C:\\Users\\jagarayleon\\Desktop\\Book\\CursoNet\\SolucionSistemaVenta\\SistemaVenta.IOC\\SistemaVenta.IOC.csproj"
+            "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.IOC\\SistemaVenta.IOC.csproj": {
+              "projectPath": "C:\\Users\\antho\\Source\\Repos\\ASP-NET\\SolucionSistemaVenta\\SistemaVenta.IOC\\SistemaVenta.IOC.csproj"
             }
           }
         }
@@ -10570,7 +10571,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
