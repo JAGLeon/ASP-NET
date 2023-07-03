@@ -28,7 +28,7 @@ namespace SistemaVenta.BLL.Implementacion
             {
                 IQueryable<Configuracion> query = await _repositorio.Consultar(c => c.Recurso.Equals("Servicio_Correo"));
 
-                Dictionary<string, string> Config = query.ToDictionary(keySelector: c => c.Propiedad,elementSelector: c=> c.Valor);
+                Dictionary<string, string> Config = query.ToDictionary(keySelector: c => c.Propiedad, elementSelector: c => c.Valor);
 
                 var credenciales = new NetworkCredential(Config["correo"], Config["clave"]);
 
@@ -38,7 +38,6 @@ namespace SistemaVenta.BLL.Implementacion
                     Subject = Asunto,
                     Body = Mensaje,
                     IsBodyHtml = true
-
                 };
 
                 correo.To.Add(new MailAddress(CorreoDestino));
@@ -47,6 +46,7 @@ namespace SistemaVenta.BLL.Implementacion
                 {
                     Host = Config["host"],
                     Port = int.Parse(Config["puerto"]),
+                    Credentials = credenciales,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
                     EnableSsl = true
@@ -57,7 +57,6 @@ namespace SistemaVenta.BLL.Implementacion
             }
             catch 
             {
-
                 return false;
             }
         }
