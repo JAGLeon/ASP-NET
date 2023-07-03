@@ -16,12 +16,11 @@ namespace SistemaVenta.AplicacionWeb.Controllers
         private readonly IUsuarioService _usuarioServicio;
         private readonly IRolService _rolServicio;
         private readonly IMapper _mapper;
-        public UsuarioController(IUsuarioService usuarioServicio, IRolService rolServicio, Mapper mapper)
+        public UsuarioController(IUsuarioService usuarioServicio, IRolService rolServicio, IMapper mapper)
         {
             _usuarioServicio = usuarioServicio;
             _rolServicio = rolServicio;
             _mapper = mapper;
-
         }
 
         public IActionResult Index()
@@ -39,8 +38,8 @@ namespace SistemaVenta.AplicacionWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> Lista()
         {
-            List<VMUsuario> vmUsurioLista = _mapper.Map<List<VMUsuario>>(await _usuarioServicio.Lista());
-            return StatusCode(StatusCodes.Status200OK, new { data = vmUsurioLista });
+            List<VMUsuario> vmUsuarioLista = _mapper.Map<List<VMUsuario>>(await _usuarioServicio.Lista());
+            return StatusCode(StatusCodes.Status200OK, new { data = vmUsuarioLista });
         }
 
 

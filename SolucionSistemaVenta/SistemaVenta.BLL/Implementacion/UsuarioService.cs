@@ -27,7 +27,7 @@ namespace SistemaVenta.BLL.Implementacion
             ICorreoService correoService
             )
         {
-            repositorio = repositorio;
+            _repositorio = repositorio;
             _firebaseService= firebaseService;
             _utilidadesService= utilidadesService;
             _correoService= correoService;
@@ -36,7 +36,7 @@ namespace SistemaVenta.BLL.Implementacion
         public async Task<List<Usuario>> Lista()
         {
             IQueryable<Usuario> query = await _repositorio.Consultar();
-            return query.Include(rol => rol.IdRolNavigation).ToList();
+            return query.Include(r => r.IdRolNavigation).ToList();
         }
         public async Task<Usuario> Crear(Usuario entidad, Stream Foto = null, string NombreFoto = "", string UrlPlantillaCorreo = "")
         {
