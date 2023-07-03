@@ -148,5 +148,85 @@ $('#btnGuardar').click(function () {
 
                 }
             })
+    } else {
+        fetch("/Usuario/Editar", {
+            method: "PUT",
+            body: formData
+        })
+            .then(response => {
+                $("#modalData").find("div.modal-content").LoadingOverlay("hide");
+                return response.ok ? response.json() : Promise.reject(response);
+            })
+            .then(responseJson => {
+                if (responseJson.estado) {
+                    tablaData.row(filaSeleccionada).data(responseJson.objeto).draw(false);
+                    filaSeleccionada = null;
+                    $("#modalData").modal("hide");
+                    swal("Listo!", "El usuario fue modificado", "success");
+                } else {
+                    swal("Listo!", responseJson.mensaje, "error");
+
+                }
+            })
     }
+})
+
+let filaSeleccionada;
+$("#tbdata tbody").on("click", ".btn-editar", function () {
+    if ($(this).closest("tr").hasClass("child")) {
+        filaSeleccionada = $(this).closest("tr").prev();
+    } else {
+        filaSeleccionada = $(this).closest("tr");
+    }
+
+    const data = tablaData.row(filaSeleccionada).data();
+
+    mostrarModal(data);
+})
+
+
+$("#tbdata tbody").on("click", ".btn-eliminar", function () {
+    let fila;
+    if ($(this).closest("tr").hasClass("child")) {
+        fila = $(this).closest("tr").prev();
+    } else {
+        fila = $(this).closest("tr");
+    }
+
+    const data = tablaData.row(fila).data();
+
+    swal({
+        title: "¿Esta seguro?",
+        text: `Eliminar al usuario "${data.nombre}"`,
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonClass: "btn-danger",
+        confirmButtonText: "Si, eliminar",
+        cancelButtonText: "No, cancelar",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    },
+        function (respuesta) {
+            if (respuesta) {
+                $(".showSweetAlert").LoadingOverlay("show");
+            
+
+            fetch(`/Usuario/Eliminar?IdUsuario=${data.idUsuario}`, {
+                method: "DELETE"
+            })
+                .then(response => {
+                    $(".showSweetAlert").LoadingOverlay("hide");
+                    return response.ok ? response.json() : Promise.reject(response);
+                })
+                .then(responseJson => {
+                    if (responseJson.estado) {
+                        tablaData.row(fila).remove().draw();
+                        swal("Listo!", "El usuario fue eliminado", "success");
+                    } else {
+                        swal("Lo sentimos", responseJson.mensaje, "error");
+                    }
+                })
+            }
+        }
+    );
 })
