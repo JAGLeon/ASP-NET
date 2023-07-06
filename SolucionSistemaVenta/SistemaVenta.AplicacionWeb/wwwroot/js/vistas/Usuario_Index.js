@@ -144,7 +144,7 @@ $('#btnGuardar').click(function () {
                     $("#modalData").modal("hide");
                     swal("Listo!", "El usuario fue creado", "success");
                 } else {
-                    swal("Listo!", responseJson.mensaje, "error");
+                    swal("Lo sentimos", responseJson.mensaje, "error");
 
                 }
             })
